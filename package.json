@@ -1,0 +1,10 @@
+{
+  "name": "tap-tempo-object",
+  "version": "1.0.3",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Sam Parsons",
+  "license": "ISC",
+  "dependencies": {}
+}
