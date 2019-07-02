@@ -1,12 +1,10 @@
 module.exports = {
-  tempo: 140,
+  tempo: 0,
   timeContainer: [],
-  init() {
-    console.log("init");
-  },
+  threshold: 3,
   tap() {
     const timeContainer = this.timeContainer;
-    if (timeContainer.length > 2) timeContainer.shift();
+    if (timeContainer.length > this.threshold - 1) timeContainer.shift();
     timeContainer.push(Date.now()); //
     const tempo = Math.round(
       (1000 /
@@ -21,9 +19,12 @@ module.exports = {
     return this.tempo;
   },
   clear() {
-    console.log("clear");
+    this.timeContainer = [];
   },
   getLastTempo() {
-    console.log("last tempo");
+    return this.tempo;
+  },
+  setThreshold(value) {
+    this.threshold = value;
   }
 };
