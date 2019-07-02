@@ -1,5 +1,5 @@
 export const TapTempo = {
-  tempo: 0,
+  tempo: -1,
   threshold: 3,
   timeContainer: [],
   tap() {
@@ -8,7 +8,7 @@ export const TapTempo = {
       timeContainer.shift();
     }
     timeContainer.push(Date.now());
-    const tempo = Math.round(
+    let tempo = Math.round(
       (1000 /
         (timeContainer
           .slice(1)
@@ -17,6 +17,9 @@ export const TapTempo = {
           (timeContainer.length - 1))) *
         60,
     );
+    if (typeof tempo !== 'number') {
+      tempo = -1;
+    }
     this.tempo = tempo;
     return this.tempo;
   },
