@@ -17,7 +17,7 @@ export const TapTempo = {
           (timeContainer.length - 1))) *
         60,
     );
-    if (typeof tempo !== 'number') {
+    if (Number.isNaN(tempo)) {
       tempo = -1;
     }
     this.tempo = tempo;
