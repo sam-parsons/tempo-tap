@@ -1,4 +1,4 @@
-# Tempo Tap
+# tempo tap
 
 tap tempo object to measure speed of successive invocations
 
