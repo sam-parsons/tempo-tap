@@ -9,33 +9,36 @@ tap tempo object to measure speed of successive invocations
 ## example
 
 ```js
-var { TapTempo } = require('tempo-tap');
+const { tapTempo } = require('tempo-tap');
 
 let tempo = 0;
 
-TapTempo.tap();
-setTimeout(() => (tempo = TapTempo.tap()), 1000);
-setTimeout(() => (tempo = TapTempo.tap()), 2000);
-setTimeout(() => (tempo = TapTempo.tap()), 3000);
-setTimeout(() => (tempo = TapTempo.tap()), 4000);
+// programmatically simulate one tap per second
+tapTempo.tap();
+setTimeout(() => (tempo = tapTempo.tap()), 1000);
+setTimeout(() => (tempo = tapTempo.tap()), 2000);
+setTimeout(() => (tempo = tapTempo.tap()), 3000);
+setTimeout(() => (tempo = tapTempo.tap()), 4000);
 
-console.log(tempo); // 60
+console.log(tempo); // 60 taps per second
 ```
 
-## TapTempo.tap()
+## api
+
+#### ``tapTempo.tap()``
 
 records a tap with Date.now(), stores inside TimeContainer
 returns current tempo or -1 for insufficient data
 
-## TapTempo.getLastTempo()
+#### ``tapTempo.getLastTempo()``
 
 returns the last calculated tempo as a number
 
-## TapTempo.clear()
+#### ``tapTempo.clear()``
 
 clears TimeContainer, reinitiates the object
 
-## TapTempo.setThreshold()
+#### ``tapTempo.setThreshold()``
 
 sets how many values TimeContainer must contain until it can make a tempo calculation - default is 3
 
