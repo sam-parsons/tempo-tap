@@ -25,22 +25,12 @@ console.log(tempo); // 60 taps per second
 
 ## api
 
-#### ``tapTempo.tap()``
-
-records a tap with Date.now(), stores inside TimeContainer
+#### Methods & Properties
+* `.tap()` records a tap with Date.now(), stores inside TimeContainer
 returns current tempo or -1 for insufficient data
-
-#### ``tapTempo.getLastTempo()``
-
-returns the last calculated tempo as a number
-
-#### ``tapTempo.clear()``
-
-clears TimeContainer, reinitiates the object
-
-#### ``tapTempo.setThreshold()``
-
-sets how many values TimeContainer must contain until it can make a tempo calculation - default is 3
+* `.getLastTempo()` returns the last calculated tempo as a number
+* `.clear()` clears TimeContainer, reinitiates the object
+* `.setThreshold()` sets how many values TimeContainer must contain until it can make a tempo calculation - default is 3
 
 ## license
 
